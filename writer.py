@@ -1,8 +1,14 @@
 import boto3
-def printFunction(found, data,f ):
-	data[found] = "		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);\n cube.transform.position = new Vector3(0, 0.5F, 0);\n //Badgers\n}}"
+def printFunctionChange(found, data,f, path):
 	for i in range(0,found+1):
+		if i == found:
+			with open(path, 'r') as q:
+				for line in q:
+					f.write(line)
 		f.write(data[i])
+		
+		
+retrievedValue = 0;
 path = 'C:\Users\Jordan\Documents\Hackathon\Assets\AWSScript.cs'
 count = 0
 found = 0
@@ -17,7 +23,16 @@ with open(path, 'r') as f:
 				break
 		count += 1;
 with open(path, 'w') as f:
-	printFunction(found, data,f )
+	textPath = ''
+	if retrievedValue == 0:
+		textPath = 'spawnCube.txt'
+	elif retrievedValue == 1:
+		textPath = 'addTexture.txt'
+	elif retrievedValue == 2:
+		textPath = 'addSurroudings.txt'
+	else: 
+		textPath = 'startMovie.txt'
+	printFunctionChange(found, data,f, textPath)
 			
 			
 
