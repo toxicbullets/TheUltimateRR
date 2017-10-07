@@ -5,22 +5,22 @@ def printFunctionChange(found, data,f, path):
 			with open(path, 'r') as q:
 				for line in q:
 					f.write(line)
+				q.close
 		f.write(data[i])
+	f.close
 		
 		
-retrievedValue = 0;
+retrievedValue = 3;
 path = 'C:\Users\Jordan\Documents\Hackathon\Assets\AWSScript.cs'
 count = 0
 found = 0
 data = []
 with open(path, 'r') as f:
 	for line in f:
-		if "//Badgers" in line:
+		if "Badgers" in line:
 			found = count
 		else:
 			data.append(line)
-			if count >= 23:
-				break
 		count += 1;
 with open(path, 'w') as f:
 	textPath = ''
@@ -29,7 +29,7 @@ with open(path, 'w') as f:
 	elif retrievedValue == 1:
 		textPath = 'addTexture.txt'
 	elif retrievedValue == 2:
-		textPath = 'addSurroudings.txt'
+		textPath = 'addSurroundings.txt'
 	else: 
 		textPath = 'startMovie.txt'
 	printFunctionChange(found, data,f, textPath)

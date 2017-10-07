@@ -1,3 +1,4 @@
-GameObject b = Instantiate(BCube, transform.position, transform.rotation);
+Destroy(b);
+GameObject roll = Instantiate(rr, transform.position, transform.rotation);
 //Badgers
 }
