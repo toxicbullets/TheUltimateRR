@@ -9,8 +9,8 @@ def printFunctionChange(found, data,f, path):
 	f.close
 		
 def ProcessandPrint(retrievedValue)	:
-	print (retrievedValue)
-	path = 'C:\Users\Jordan\Documents\Hackathon\Assets\AWSScript.cs'
+	#print (retrievedValue)
+	path = 'C:\Users\dmcut\Documents\Unity\Hackerman\Hackathon\Assets\AWSScript.cs'
 	count = 0
 	found = 0
 	data = []
@@ -23,11 +23,11 @@ def ProcessandPrint(retrievedValue)	:
 			count += 1;
 	with open(path, 'w') as f:
 		textPath = ''
-		if retrievedValue == 0:
+		if retrievedValue == 'PlaceCube':
 			textPath = 'spawnCube.txt'
-		elif retrievedValue == 1:
+		elif retrievedValue == 'TextureCube':
 			textPath = 'addTexture.txt'
-		elif retrievedValue == 2:
+		elif retrievedValue == 'AddScene':
 			textPath = 'addSurroundings.txt'
 		else: 
 			textPath = 'startMovie.txt'
